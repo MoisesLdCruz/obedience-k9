@@ -21,7 +21,7 @@
   </script>
   <style>
    html { scroll-behavior: smooth; }
-body { background:#0e0e0e; }
+body { background:#0e0e0e; overflow-x: hidden; }
 ::selection { background:#f4c145; color:#3f2e00; }
 section { scroll-margin-top: 5rem; }
 [data-reveal] { opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
@@ -33,6 +33,14 @@ body.is-loaded .hero-media { transform:scale(1); }
   [data-reveal] { opacity:1; transform:none; transition:none; }
   .hero-media { transform:none; transition:none; }
 }
+/* Responsividade extra */
+@media (max-width: 640px) {
+  .font-display-hero, .text-display-hero { font-size: 42px !important; line-height: 46px !important; }
+  .font-headline-xl, .text-headline-xl { font-size: 28px !important; line-height: 34px !important; }
+}
+@media (min-width: 641px) and (max-width: 1023px) {
+  .font-display-hero, .text-display-hero { font-size: 56px !important; line-height: 60px !important; }
+}
   </style>
   <meta content="Obedience K9 &mdash; Adestramento, alta performance, mentorias e semin&aacute;rios com Jhansen Machado em Itapetininga &mdash; SP." name="description"/>
  </head>
@@ -43,11 +51,11 @@ body.is-loaded .hero-media { transform:scale(1); }
      <div class="relative flex items-center justify-center p-space-xxs border border-outline-variant/40 bg-surface-container-low">
       <img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1UJK-lhZbw0GElYTxzVOioVEv66eugzkNhkfjgEaCQFfv917xCoy9rmXpHA2HGWEF-rYi4srOtsRejOz6jc77bgpPIHPTRAex8DHbl5_KRa_3gBF9exmdP1tYsynBGL7Y2CEGYO1nTJOwVeTpSQJ4hOJNirgl5qQ6-SFVN-anjEpqrj2h66iVd2bn03MB6GhIs5RYnoL1tN3m8JVWbQRL8vF34arTsaf4cSKDmE2wHUHR1qCc6xMW6UC1G3eb2IehgnT-TjGYWw"/>
      </div>
-     <div class="flex flex-col">
-      <span class="font-headline-md text-headline-md tracking-wide uppercase text-on-surface leading-none">
+     <div class="flex flex-col min-w-0">
+      <span class="font-headline-md text-headline-md tracking-wide uppercase text-on-surface leading-none text-[18px] sm:text-inherit">
        OBEDIENCE K9
       </span>
-      <span class="font-label-tactical text-label-tactical text-primary uppercase mt-space-xxs tracking-[0.25em]">
+      <span class="font-label-tactical text-label-tactical text-primary uppercase mt-space-xxs tracking-[0.15em] sm:tracking-[0.25em] text-[9px] sm:text-inherit">
        JHANSEN MACHADO
       </span>
      </div>
@@ -71,7 +79,7 @@ body.is-loaded .hero-media { transform:scale(1); }
       menu
      </span>
     </button>
-    <div class="flex items-center gap-space-sm">
+    <div class="hidden sm:flex items-center gap-space-sm">
      <a class="relative inline-flex items-center justify-center px-space-md py-space-xs bg-surface-container-low border border-primary text-primary font-subheading-tactical text-subheading-tactical uppercase tracking-wider transition-all duration-200 hover:bg-primary hover:text-on-primary shadow-[0_0_15px_rgba(214,166,42,0.15)]" data-path="agendamento" href="#agendamento-final">
       Agendar Avalia&ccedil;&atilde;o
      </a>
@@ -101,7 +109,7 @@ body.is-loaded .hero-media { transform:scale(1); }
   <main class="w-full pt-20 bg-surface-container-lowest min-h-screen">
    <div class="flex flex-col w-full">
     <!-- SECTION 01: HERO SECTION -->
-    <section class="relative w-full min-h-[92vh] flex items-center justify-center -mt-20 overflow-hidden bg-surface-container-lowest">
+    <section class="relative w-full min-h-[85vh] sm:min-h-[92vh] flex items-center justify-center -mt-20 overflow-hidden bg-surface-container-lowest">
      <div class="absolute inset-0 z-0 bg-cover bg-center mix-blend-luminosity opacity-40 scale-105 transform motion-safe:transition-transform motion-safe:duration-1000 ease-out hero-media" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuACkis7pNSBVNgiW8ab4RYUasPLcKakLidzVLk2u268rlTovMnkum-jdEhdTNkIbkPB2GcjF_vpJFNjbSW7euN_X_gFQ91q5j11S6Xn0zm9zqvO7U2LDqccpBvC10B_cITwExDvYv3eXzUO-F-dOrRjTZ43m35lvBKQ9-7JeUEi_xVKaDebfDygaMMzRNnWmVfUEarUYFzcj1O2lgZJqUlI_K1LA_l5VH9S79OXupMetUQKdIzJTDgL')">
      </div>
      <div class="absolute inset-0 z-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/80 to-surface-container-lowest/50">
@@ -621,7 +629,7 @@ body.is-loaded .hero-media { transform:scale(1); }
       <!-- Asymmetric Editorial Gallery -->
       <div class="grid grid-cols-1 md:grid-cols-12 gap-space-md">
        <!-- Main feature: Handler in action -->
-       <div class="md:col-span-7 relative h-[480px] bg-cover bg-center overflow-hidden group" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDp49cQDlfbGVXD-BwCW0Rz7lDBhgXPEdi70sQF1pD9RjAjH8cSLSQaBsY0_fTEg9UzFlJbMdvLLZUzOtixRwKydKeOK2PQwhJiDvXIR7LZvbGGEu7n-gs3rQoIOQhGZp9RV4laJMM8p5FXYppypk7o9jtbox0NJi0edonxkTK2XwdKXn3YbBFRWxCH8U0nLKk31NTyLXlvA9WTM7GHIyF-LHCOuBV9LlYxaBKi15qkqRaD3dwLwGd1')">
+       <div class="md:col-span-7 relative h-[280px] sm:h-[360px] md:h-[480px] bg-cover bg-center overflow-hidden group" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDp49cQDlfbGVXD-BwCW0Rz7lDBhgXPEdi70sQF1pD9RjAjH8cSLSQaBsY0_fTEg9UzFlJbMdvLLZUzOtixRwKydKeOK2PQwhJiDvXIR7LZvbGGEu7n-gs3rQoIOQhGZp9RV4laJMM8p5FXYppypk7o9jtbox0NJi0edonxkTK2XwdKXn3YbBFRWxCH8U0nLKk31NTyLXlvA9WTM7GHIyF-LHCOuBV9LlYxaBKi15qkqRaD3dwLwGd1')">
         <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent">
         </div>
         <div class="absolute top-space-md left-space-md">
@@ -643,7 +651,7 @@ body.is-loaded .hero-media { transform:scale(1); }
         </div>
        </div>
        <!-- Secondary feature: Tactical K9 Stance -->
-       <div class="md:col-span-5 relative h-[480px] bg-cover bg-center overflow-hidden group" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuACkis7pNSBVNgiW8ab4RYUasPLcKakLidzVLk2u268rlTovMnkum-jdEhdTNkIbkPB2GcjF_vpJFNjbSW7euN_X_gFQ91q5j11S6Xn0zm9zqvO7U2LDqccpBvC10B_cITwExDvYv3eXzUO-F-dOrRjTZ43m35lvBKQ9-7JeUEi_xVKaDebfDygaMMzRNnWmVfUEarUYFzcj1O2lgZJqUlI_K1LA_l5VH9S79OXupMetUQKdIzJTDgL')">
+       <div class="md:col-span-5 relative h-[280px] sm:h-[360px] md:h-[480px] bg-cover bg-center overflow-hidden group" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuACkis7pNSBVNgiW8ab4RYUasPLcKakLidzVLk2u268rlTovMnkum-jdEhdTNkIbkPB2GcjF_vpJFNjbSW7euN_X_gFQ91q5j11S6Xn0zm9zqvO7U2LDqccpBvC10B_cITwExDvYv3eXzUO-F-dOrRjTZ43m35lvBKQ9-7JeUEi_xVKaDebfDygaMMzRNnWmVfUEarUYFzcj1O2lgZJqUlI_K1LA_l5VH9S79OXupMetUQKdIzJTDgL')">
         <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent">
         </div>
         <div class="absolute top-space-md left-space-md">
@@ -721,11 +729,11 @@ body.is-loaded .hero-media { transform:scale(1); }
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-2xl items-center">
        <!-- Coluna 1: Fotografia marcante -->
        <div class="lg:col-span-6 relative">
-        <div class="relative w-full h-[520px] bg-cover bg-center overflow-hidden" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDp49cQDlfbGVXD-BwCW0Rz7lDBhgXPEdi70sQF1pD9RjAjH8cSLSQaBsY0_fTEg9UzFlJbMdvLLZUzOtixRwKydKeOK2PQwhJiDvXIR7LZvbGGEu7n-gs3rQoIOQhGZp9RV4laJMM8p5FXYppypk7o9jtbox0NJi0edonxkTK2XwdKXn3YbBFRWxCH8U0nLKk31NTyLXlvA9WTM7GHIyF-LHCOuBV9LlYxaBKi15qkqRaD3dwLwGd1')">
+        <div class="relative w-full h-[300px] sm:h-[400px] md:h-[520px] bg-cover bg-center overflow-hidden" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDp49cQDlfbGVXD-BwCW0Rz7lDBhgXPEdi70sQF1pD9RjAjH8cSLSQaBsY0_fTEg9UzFlJbMdvLLZUzOtixRwKydKeOK2PQwhJiDvXIR7LZvbGGEu7n-gs3rQoIOQhGZp9RV4laJMM8p5FXYppypk7o9jtbox0NJi0edonxkTK2XwdKXn3YbBFRWxCH8U0nLKk31NTyLXlvA9WTM7GHIyF-LHCOuBV9LlYxaBKi15qkqRaD3dwLwGd1')">
          <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent">
          </div>
         </div>
-        <div class="absolute -bottom-4 -right-4 bg-surface-container-high p-space-md hidden sm:flex flex-col gap-space-xxs">
+        <div class="absolute -bottom-4 right-0 sm:-right-4 bg-surface-container-high p-space-md hidden sm:flex flex-col gap-space-xxs">
          <span class="font-label-tactical text-label-tactical uppercase tracking-widest text-primary">
           ATUA&Ccedil;&Atilde;O
          </span>
