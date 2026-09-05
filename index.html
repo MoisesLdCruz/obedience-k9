@@ -41,6 +41,34 @@ body.is-loaded .hero-media { transform:scale(1); }
 @media (min-width: 641px) and (max-width: 1023px) {
   .font-display-hero, .text-display-hero { font-size: 56px !important; line-height: 60px !important; }
 }
+/* Menu mobile tela cheia — fundo 100% opaco */
+#mobile-menu {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 9998 !important;
+  background: #0e0e0e !important;
+  background-color: #0e0e0e !important;
+  opacity: 1 !important;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 2rem;
+}
+#mobile-menu.is-open {
+  display: flex !important;
+}
+#mobile-menu a {
+  color: #e5e2e1 !important;
+}
+#mobile-menu a:hover {
+  color: #f4c145 !important;
+}
+#mobile-menu-toggle {
+  z-index: 9999 !important;
+  position: relative;
+}
   </style>
   <meta content="Obedience K9 &mdash; Adestramento, alta performance, mentorias e semin&aacute;rios com Jhansen Machado em Itapetininga &mdash; SP." name="description"/>
  </head>
@@ -74,7 +102,7 @@ body.is-loaded .hero-media { transform:scale(1); }
       Instagram
      </a>
     </nav>
-    <button aria-expanded="false" aria-label="Abrir menu" class="lg:hidden inline-flex items-center justify-center w-11 h-11 border border-outline-variant/50 text-on-surface bg-surface-container-low" id="mobile-menu-toggle" type="button">
+    <button aria-expanded="false" aria-label="Abrir menu" class="lg:hidden relative z-50 inline-flex items-center justify-center w-11 h-11 border border-outline-variant/50 text-on-surface bg-surface-container-low" id="mobile-menu-toggle" type="button">
      <span class="material-symbols-outlined">
       menu
      </span>
@@ -85,27 +113,27 @@ body.is-loaded .hero-media { transform:scale(1); }
      </a>
     </div>
    </div>
-   <div class="hidden lg:hidden absolute top-20 left-0 right-0 bg-surface-container-lowest/98 backdrop-blur-xl border-b border-outline-variant/40 px-gutter-mobile py-space-md shadow-2xl" id="mobile-menu">
-    <a class="block py-space-sm font-subheading-tactical text-subheading-tactical uppercase tracking-widest text-on-surface-variant hover:text-primary" href="#posicionamento">
+   </header>
+  <div id="mobile-menu">
+    <a class="block w-full text-center py-4 font-headline-md text-headline-md uppercase tracking-widest border-b border-white/10 transition-colors" href="#posicionamento">
      O Trabalho
     </a>
-    <a class="block py-space-sm font-subheading-tactical text-subheading-tactical uppercase tracking-widest text-on-surface-variant hover:text-primary" href="#servicos">
+    <a class="block w-full text-center py-4 font-headline-md text-headline-md uppercase tracking-widest border-b border-white/10 transition-colors" href="#servicos">
      Servi&ccedil;os
     </a>
-    <a class="block py-space-sm font-subheading-tactical text-subheading-tactical uppercase tracking-widest text-on-surface-variant hover:text-primary" href="#resultados">
+    <a class="block w-full text-center py-4 font-headline-md text-headline-md uppercase tracking-widest border-b border-white/10 transition-colors" href="#resultados">
      Resultados
     </a>
-    <a class="block py-space-sm font-subheading-tactical text-subheading-tactical uppercase tracking-widest text-on-surface-variant hover:text-primary" href="#sobre">
+    <a class="block w-full text-center py-4 font-headline-md text-headline-md uppercase tracking-widest border-b border-white/10 transition-colors" href="#sobre">
      Sobre
     </a>
-    <a class="block py-space-sm font-subheading-tactical text-subheading-tactical uppercase tracking-widest text-on-surface-variant hover:text-primary" href="#instagram">
+    <a class="block w-full text-center py-4 font-headline-md text-headline-md uppercase tracking-widest border-b border-white/10 transition-colors" href="#instagram">
      Instagram
     </a>
-    <a class="block py-space-sm font-subheading-tactical text-subheading-tactical uppercase tracking-widest text-on-surface-variant hover:text-primary" href="#agendamento-final">
+    <a class="mt-6 inline-flex items-center justify-center px-8 py-4 bg-[#f4c145] text-[#3f2e00] font-headline-md text-headline-md uppercase tracking-wider hover:bg-[#f2bf43] transition-all" href="#agendamento-final" style="background-color:#f4c145;color:#3f2e00;">
      Agendar Avalia&ccedil;&atilde;o
     </a>
    </div>
-  </header>
   <main class="w-full pt-20 bg-surface-container-lowest min-h-screen">
    <div class="flex flex-col w-full">
     <!-- SECTION 01: HERO SECTION -->
@@ -1005,13 +1033,15 @@ body.is-loaded .hero-media { transform:scale(1); }
     toggle.addEventListener('click', () => {
       const open = toggle.getAttribute('aria-expanded') === 'true';
       toggle.setAttribute('aria-expanded', String(!open));
-      menu.classList.toggle('hidden', open);
+      menu.classList.toggle('is-open', !open);
+      document.body.style.overflow = open ? '' : 'hidden';
       const icon = toggle.querySelector('.material-symbols-outlined');
       if (icon) icon.textContent = open ? 'menu' : 'close';
     });
     menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-      menu.classList.add('hidden');
+      menu.classList.remove('is-open');
       toggle.setAttribute('aria-expanded','false');
+      document.body.style.overflow = '';
       const icon = toggle.querySelector('.material-symbols-outlined');
       if (icon) icon.textContent='menu';
     }));
